@@ -1,0 +1,147 @@
+{
+  "guest": [
+    {
+      "category": "🏆 Hackathon Showcase",
+      "items": [
+        {
+          "text": "🌟 Wellness Journey",
+          "path": "/wellness-journey"
+        },
+        {
+          "text": "🌟 Main Showcase",
+          "path": "/showcase"
+        },
+        {
+          "text": "⚛️ Quantum Stress Predictor",
+          "path": "/quantum-stress-predictor"
+        },
+        {
+          "text": "🧠 AI Emotion Analysis",
+          "path": "/ai-emotion-detector"
+        },
+        {
+          "text": "🎵 Brainwave Music Therapy",
+          "path": "/brainwave-music"
+        },
+        {
+          "text": "💬 AI Chatbot",
+          "path": "/chatbot"
+        },
+        {
+          "text": "📊 Mental Health Dashboard",
+          "path": "/mental-health-dashboard"
+        }
+      ]
+    },
+    {
+      "category": "Core Features",
+      "items": [
+        {
+          "text": "Stress Management",
+          "path": "/home"
+        },
+        {
+          "text": "CBT Therapy",
+          "path": "/cbt"
+        },
+        {
+          "text": "Meditation",
+          "path": "/guided-meditation"
+        }
+      ]
+    },
+    {
+      "text": "Login",
+      "path": "/login"
+    }
+  ],
+  "user": [
+    {
+      "category": "🏆 Hackathon Showcase",
+      "items": [
+        {
+          "text": "🌟 Wellness Journey",
+          "path": "/wellness-journey"
+        },
+        {
+          "text": "🌟 Main Showcase",
+          "path": "/showcase"
+        },
+        {
+          "text": "🤖 AI Emotion Detector",
+          "path": "/ai-emotion-detector"
+        },
+        {
+          "text": "💬 AI Chatbot",
+          "path": "/chatbot"
+        },
+        {
+          "text": "📊 Mental Health Dashboard",
+          "path": "/mental-health-dashboard"
+        }
+      ]
+    },
+    {
+      "category": "🧠 Advanced AI Tools",
+      "items": [
+        {
+          "text": "⚛️ Quantum Stress Predictor",
+          "path": "/quantum-stress-predictor"
+        },
+        {
+          "text": "🧠 AI Emotion Analysis",
+          "path": "/ai-emotion-detector"
+        },
+        {
+          "text": "🎵 Brainwave Music Therapy",
+          "path": "/brainwave-music"
+        },
+        {
+          "text": "🎥 Real-Time Therapy",
+          "path": "/realtime-therapy"
+        },
+        {
+          "text": "🌱 Eco-Anxiety Detector",
+          "path": "/eco-anxiety-detector"
+        },
+        {
+          "text": "📈 Mood Tracker",
+          "path": "/mood-tracker"
+        },
+        {
+          "text": "✅ Habit Tracker",
+          "path": "/habit-tracker"
+        }
+      ]
+    },
+    {
+      "category": "Core Features",
+      "items": [
+        {
+          "text": "Stress Management",
+          "path": "/home"
+        },
+        {
+          "text": "CBT Therapy",
+          "path": "/cbt"
+        },
+        {
+          "text": "Meditation",
+          "path": "/guided-meditation"
+        },
+        {
+          "text": "Peer Chat",
+          "path": "/chat"
+        },
+        {
+          "text": "🏆 Wellness Achievements",
+          "path": "/wellness-achievements"
+        }
+      ]
+    },
+    {
+      "text": "Profile",
+      "path": "/profile"
+    }
+  ]
+}
