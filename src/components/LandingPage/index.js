@@ -15,20 +15,21 @@ const LandingPage = () => {
 
   return (
     <Box sx={{
-      minHeight: '100vh',
+      minHeight: 'calc(100vh - 70px)',
       background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
       display: 'flex',
       alignItems: 'center',
-      justifyContent: 'center'
+      justifyContent: 'center',
+      marginTop: '-70px'
     }}>
-      <Container maxWidth="md" sx={{ textAlign: 'center' }}>
+      <Container maxWidth="md" sx={{ textAlign: 'center', pt: 8 }}>
         <Typography variant="h2" sx={{ color: 'white', mb: 4, fontWeight: 700 }}>
           MindfulMe
         </Typography>
         <Typography variant="h5" sx={{ color: 'white', mb: 6, fontWeight: 300 }}>
           Your Complete Mental Wellness Companion
         </Typography>
-        <Box sx={{ display: 'flex', gap: 3, justifyContent: 'center' }}>
+        <Box sx={{ display: 'flex', gap: 3, justifyContent: 'center', flexWrap: 'wrap' }}>
           <Button
             variant="contained"
             size="large"
@@ -39,7 +40,11 @@ const LandingPage = () => {
               px: 4,
               py: 2,
               fontSize: '1.1rem',
-              fontWeight: 600
+              fontWeight: 600,
+              '&:hover': {
+                bgcolor: 'rgba(255,255,255,0.9)',
+                transform: 'translateY(-2px)'
+              }
             }}
           >
             Get Started Free
@@ -54,7 +59,11 @@ const LandingPage = () => {
               px: 4,
               py: 2,
               fontSize: '1.1rem',
-              fontWeight: 600
+              fontWeight: 600,
+              '&:hover': {
+                borderColor: 'rgba(255,255,255,0.8)',
+                bgcolor: 'rgba(255,255,255,0.1)'
+              }
             }}
           >
             Sign In
