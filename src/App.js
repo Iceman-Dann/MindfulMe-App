@@ -335,32 +335,32 @@ function App() {
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <Wrapper>
         {/* Professional Navigation Bar */}
-        <AppBar 
-          position="sticky" 
-          sx={{ 
-            background: darkMode ? 
-              'linear-gradient(135deg, rgba(26, 26, 26, 0.95), rgba(45, 45, 45, 0.95))' : 
-              'linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 249, 250, 0.95))',
-            backdropFilter: 'blur(10px)',
-            borderBottom: `1px solid ${darkMode ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)'}`,
-            boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
-          }}
-        >
-          <Toolbar sx={{ minHeight: { xs: '60px', sm: '70px' } }}>
-            {/* Hamburger Menu for Mobile */}
-            <IconButton
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-              onClick={toggleDrawer(true)}
-              sx={{ 
-                mr: 2, 
-                display: { xs: 'flex', sm: 'none' },
-                color: darkMode ? '#ffffff' : '#2d3748'
-              }}
-            >
-              <MenuIcon />
-            </IconButton>
+        {location.pathname !== '/' && (
+          <AppBar 
+            position="sticky" 
+            sx={{ 
+              background: darkMode ? 
+                'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)' : 
+                'linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)',
+              backdropFilter: 'blur(10px)',
+              boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
+            }}
+          >
+            <Toolbar sx={{ minHeight: { xs: '60px', sm: '70px' } }}>
+              {/* Hamburger Menu for Mobile */}
+              <IconButton
+                edge="start"
+                color="inherit"
+                aria-label="menu"
+                onClick={toggleDrawer(true)}
+                sx={{ 
+                  mr: 2, 
+                  display: { xs: 'flex', sm: 'none' },
+                  color: darkMode ? '#ffffff' : '#2d3748'
+                }}
+              >
+                <MenuIcon />
+              </IconButton>
 
             {/* App Logo and Title */}
             <Box sx={{ display: 'flex', alignItems: 'center', flexGrow: 1 }}>
@@ -477,6 +477,7 @@ function App() {
             </Box>
           </Toolbar>
         </AppBar>
+        )}
 
         {/* Mobile Navigation Drawer */}
         <Drawer

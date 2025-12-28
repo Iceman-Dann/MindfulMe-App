@@ -15,14 +15,13 @@ const LandingPage = () => {
 
   return (
     <Box sx={{
-      minHeight: 'calc(100vh - 70px)',
+      minHeight: '100vh',
       background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
       display: 'flex',
       alignItems: 'center',
-      justifyContent: 'center',
-      marginTop: '-70px'
+      justifyContent: 'center'
     }}>
-      <Container maxWidth="md" sx={{ textAlign: 'center', pt: 8 }}>
+      <Container maxWidth="md" sx={{ textAlign: 'center' }}>
         <Typography variant="h2" sx={{ color: 'white', mb: 4, fontWeight: 700 }}>
           MindfulMe
         </Typography>
