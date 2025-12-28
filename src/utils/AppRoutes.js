@@ -1,5 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import LandingPage from "../components/LandingPage";
 import Home from "../components/Home";
 // import MoodTracker from "../components/MoodTracker";
 // import SupportGroups from "../components/SupportGroups";
@@ -35,10 +36,11 @@ import ChangePassword from "../components/Profile/ChangePassword";
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route exact path="/" element={<Home />} />
+      <Route exact path="/" element={<LandingPage />} />
       <Route path="/login" element={<Login />} />
       <Route path="/logout" element={<Logout />} />
       <Route path="/join" element={<Join />} />
+      <Route path="/home" element={<Home />} />
       <Route path="/memory-match" element={<MemoryMatch />} />
       <Route path="/coping-strategies" element={<CopingStrategies />} />
       <Route path="/cbt" element={<CBT />} />

@@ -145,7 +145,7 @@ const Join = () => {
       
       if (result.success) {
         dispatch(login(result.user));
-        navigate("/", { replace: true });
+        navigate("/home", { replace: true });
       } else {
         setError(result.error || "Registration failed");
       }

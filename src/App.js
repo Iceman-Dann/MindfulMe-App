@@ -182,11 +182,15 @@ function App() {
   ];
 
   useEffect(() => {
-    // Check for existing user session on app load
+    // Check for existing user session on app load (but not on landing page)
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    if (currentUser) {
+    const currentPath = window.location.pathname;
+    
+    // Only auto-login if not on landing page
+    if (currentUser && currentPath !== '/') {
       dispatch(login(currentUser));
     }
+    
     // Load notifications from localStorage
     const storedNotifications = JSON.parse(localStorage.getItem('notifications') || '[]');
     

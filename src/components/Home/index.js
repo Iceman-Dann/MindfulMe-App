@@ -11,11 +11,14 @@ import {
   Chip,
   LinearProgress,
   Fade,
-  Slide
+  Slide,
+  AppBar,
+  Toolbar,
+  IconButton
 } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import {
   Psychology,
   Favorite,
@@ -34,11 +37,20 @@ import {
   Security,
   Speed,
   AccessTime,
-  Chat
+  Chat,
+  Logout
 } from "@mui/icons-material";
+import { logout } from "../store/features/auth/authSlice.js";
 
 const Home = () => {
   const darkMode = useSelector((state) => state.darkMode?.darkMode) ?? false;
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    dispatch(logout());
+    navigate("/login");
+  };
 
   const features = [
     {
@@ -122,6 +134,27 @@ const Home = () => {
 
   return (
     <Box sx={{ minHeight: "100vh", background: darkMode ? "#0a0a0a" : "linear-gradient(135deg, #667eea 0%, #764ba2 100%)" }}>
+      {/* Header */}
+      <AppBar position="static" sx={{ 
+        background: 'rgba(255,255,255,0.1)', 
+        backdropFilter: 'blur(10px)',
+        border: 'none',
+        boxShadow: 'none'
+      }}>
+        <Toolbar sx={{ justifyContent: 'space-between' }}>
+          <Typography variant="h6" sx={{ color: 'white', fontWeight: 600 }}>
+            MindfulMe
+          </Typography>
+          <IconButton 
+            onClick={handleLogout}
+            sx={{ color: 'white' }}
+            title="Logout"
+          >
+            <Logout />
+          </IconButton>
+        </Toolbar>
+      </AppBar>
+
       {/* Hero Section */}
       <Container maxWidth="lg" sx={{ py: { xs: 4, md: 8 } }}>
         <motion.div
