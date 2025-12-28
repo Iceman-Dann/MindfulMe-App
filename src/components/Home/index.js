@@ -40,7 +40,7 @@ import {
   Chat,
   Logout
 } from "@mui/icons-material";
-import { logout } from "../store/features/auth/authSlice.js";
+import { logout } from "../../store/features/auth/authSlice.js";
 
 const Home = () => {
   const darkMode = useSelector((state) => state.darkMode?.darkMode) ?? false;
