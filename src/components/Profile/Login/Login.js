@@ -131,7 +131,17 @@ const Login = () => {
       
       if (result.success) {
         dispatch(login(result.user));
-        navigate(from, { replace: true });
+        
+        // Check if user has completed onboarding
+        const onboardingComplete = JSON.parse(localStorage.getItem('onboardingComplete') || 'false');
+        
+        if (!onboardingComplete) {
+          // New user or incomplete onboarding - go to introduction
+          navigate('/introduction', { replace: true });
+        } else {
+          // Returning user - go to intended destination
+          navigate(from, { replace: true });
+        }
       } else {
         setError(result.error || "Login failed");
       }
@@ -150,7 +160,17 @@ const Login = () => {
     const currentUser = getCurrentUser();
     if (currentUser) {
       dispatch(login(currentUser));
-      navigate(from, { replace: true });
+      
+      // Check if user has completed onboarding
+      const onboardingComplete = JSON.parse(localStorage.getItem('onboardingComplete') || 'false');
+      
+      if (!onboardingComplete) {
+        // New user or incomplete onboarding - go to introduction
+        navigate('/introduction', { replace: true });
+      } else {
+        // Returning user - go to intended destination
+        navigate(from, { replace: true });
+      }
     }
   }, [dispatch, navigate, from]);
 

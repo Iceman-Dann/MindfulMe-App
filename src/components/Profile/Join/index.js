@@ -145,7 +145,10 @@ const Join = () => {
       
       if (result.success) {
         dispatch(login(result.user));
-        navigate("/home", { replace: true });
+        
+        // New users always go through onboarding
+        localStorage.setItem('onboardingComplete', 'false');
+        navigate("/introduction", { replace: true });
       } else {
         setError(result.error || "Registration failed");
       }

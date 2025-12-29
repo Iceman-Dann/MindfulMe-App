@@ -55,6 +55,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { login, logout, setLoading } from "./store/features/auth/authSlice";
 import { setDarkMode } from "./store/features/darkMode/darkModeSlice";
 import AppRoutes from "./utils/AppRoutes";
+import OnboardingNavbar from "./components/OnboardingNavbar";
 
 
 
@@ -184,10 +185,11 @@ function App() {
   useEffect(() => {
     // Check for existing user session on app load (but not on landing page)
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    const onboardingComplete = JSON.parse(localStorage.getItem('onboardingComplete') || 'false');
     const currentPath = window.location.pathname;
     
-    // Only auto-login if not on landing page
-    if (currentUser && currentPath !== '/') {
+    // Only auto-login if not on landing page and not on introduction
+    if (currentUser && currentPath !== '/' && currentPath !== '/introduction') {
       dispatch(login(currentUser));
     }
     
@@ -334,8 +336,16 @@ function App() {
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <Wrapper>
-        {/* Professional Navigation Bar */}
-        {location.pathname !== '/' && (
+        {/* Navigation Logic */}
+        {location.pathname === '/introduction' && (
+          <OnboardingNavbar />
+        )}
+        
+        {/* Main Dashboard Navbar - Only show after authentication and onboarding completion */}
+        {location.pathname !== '/' && 
+         location.pathname !== '/login' && 
+         location.pathname !== '/join' && 
+         location.pathname !== '/introduction' && (
           <AppBar 
             position="sticky" 
             sx={{ 
@@ -375,7 +385,7 @@ function App() {
               >
                 <Psychology />
               </Avatar>
-              <Box>
+              <Box onClick={() => handleNavigation('/')} sx={{ cursor: 'pointer' }}>
                 <Typography 
                   variant="h6" 
                   component="div" 

@@ -7,6 +7,7 @@ import Home from "../components/Home";
 import Login from "../components/Profile/Login/Login";
 import Logout from "../components/Profile/Logout/Logout";
 import Join from "../components/Profile/Join";
+import Introduction from "../components/Introduction";
 // import PrivateRoute from "../components/PrivateRoute";
 import MemoryMatch from "../components/MemoryMatch";
 import CopingStrategies from "../components/CopingStrategies";
@@ -40,6 +41,7 @@ const AppRoutes = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/logout" element={<Logout />} />
       <Route path="/join" element={<Join />} />
+      <Route path="/introduction" element={<Introduction />} />
       <Route path="/home" element={<Home />} />
       <Route path="/memory-match" element={<MemoryMatch />} />
       <Route path="/coping-strategies" element={<CopingStrategies />} />

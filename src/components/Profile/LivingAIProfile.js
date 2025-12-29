@@ -108,15 +108,41 @@ const LivingAIProfile = () => {
   const darkMode = useSelector((state) => state.darkMode?.darkMode) ?? false;
 
   useEffect(() => {
+    // Load onboarding profile data first
+    const onboardingProfile = JSON.parse(localStorage.getItem('userProfile') || '{}');
     const savedProfile = JSON.parse(localStorage.getItem('livingProfile') || '{}');
-    if (savedProfile.name) {
-      setProfile(savedProfile);
-      generateAIRecommendations(savedProfile);
-      generateLifeInsights(savedProfile);
-    } else {
-      setOpenDialog(true);
-      setDialogType('setup');
+    
+    // Merge onboarding data with existing profile
+    let mergedProfile = { ...savedProfile };
+    
+    if (onboardingProfile.name) {
+      mergedProfile.name = onboardingProfile.name;
     }
+    if (onboardingProfile.interests && onboardingProfile.interests.length > 0) {
+      mergedProfile.interests = onboardingProfile.interests;
+    }
+    if (onboardingProfile.goals) {
+      mergedProfile.goals = [onboardingProfile.goals];
+    }
+    
+    // Set defaults if not present
+    if (!mergedProfile.wellnessScore) mergedProfile.wellnessScore = 75;
+    if (!mergedProfile.streakDays) mergedProfile.streakDays = 1;
+    if (!mergedProfile.totalSessions) mergedProfile.totalSessions = 1;
+    if (!mergedProfile.achievements || mergedProfile.achievements.length === 0) {
+      mergedProfile.achievements = ['Welcome to MindfulMe!'];
+    }
+    if (!mergedProfile.personalityTraits || mergedProfile.personalityTraits.length === 0) {
+      mergedProfile.personalityTraits = ['Curious', 'Growth-oriented'];
+    }
+    
+    setProfile(mergedProfile);
+    
+    // Save merged profile
+    localStorage.setItem('livingProfile', JSON.stringify(mergedProfile));
+    
+    generateAIRecommendations(mergedProfile);
+    generateLifeInsights(mergedProfile);
     
     const savedMoods = JSON.parse(localStorage.getItem('moodHistory') || '[]');
     setMoodData(savedMoods);
