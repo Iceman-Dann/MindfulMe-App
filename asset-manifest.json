@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/MindfulMe-App/static/css/main.10bf23c1.css",
-    "main.js": "/MindfulMe-App/static/js/main.05547d2f.js",
+    "main.js": "/MindfulMe-App/static/js/main.2c77068a.js",
     "static/media/game-win.wav": "/MindfulMe-App/static/media/game-win.57fe6abc78a419553ee3.wav",
     "static/media/cardMatch.mp3": "/MindfulMe-App/static/media/cardMatch.81a099a67a2356730b6f.mp3",
     "static/media/flipcard.mp3": "/MindfulMe-App/static/media/flipcard.482865a614fed3add746.mp3",
@@ -11,10 +11,10 @@
     "index.html": "/MindfulMe-App/index.html",
     "static/media/eraser.svg": "/MindfulMe-App/static/media/eraser.98877d8a5364f91c300edd36dce40cd6.svg",
     "main.10bf23c1.css.map": "/MindfulMe-App/static/css/main.10bf23c1.css.map",
-    "main.05547d2f.js.map": "/MindfulMe-App/static/js/main.05547d2f.js.map"
+    "main.2c77068a.js.map": "/MindfulMe-App/static/js/main.2c77068a.js.map"
   },
   "entrypoints": [
     "static/css/main.10bf23c1.css",
-    "static/js/main.05547d2f.js"
+    "static/js/main.2c77068a.js"
   ]
 }
