@@ -48,7 +48,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build --remote mindfulme-app",
+    "deploy": "gh-pages -d build",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
     "delete": "ssh pi@192.168.1.201 'sudo rm -r /var/www/html/* && sudo mkdir -p /var/www/html/static/ && sudo chmod -R 777 /var/www/html '",
     "copy": "scp -rp ./build/* pi@192.168.1.201:/var/www/html/",
